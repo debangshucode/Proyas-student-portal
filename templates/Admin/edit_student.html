@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="content container-fluid">
+       <div class="page-header">
+          <div class="row align-items-center">
+             <div class="col">
+                <h3 class="page-title">Edit Students</h3>
+                <ul class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="students.html">Students</a></li>
+                   <li class="breadcrumb-item active">Add Students</li>
+                </ul>
+             </div>
+          </div>
+       </div>
+       {% if messages %}
+                         {% for message in messages %}
+                            {% if message.tags == 'error' %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                               {{message}}
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                               </button>
+                            </div>
+                            {% elif message.tags == 'success' %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                               {{message}}
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                               </button>
+                            </div>
+
+                            {% endif %}
+                         {% endfor %}
+                       {% endif %}
+       <div class="row">
+          <div class="col-sm-12">
+             <div class="card">
+                <div class="card-body">
+                   <form method="post" action="{% url "update_student" %}">
+                     {% csrf_token %}
+                      <div class="row">
+                        
+                         <div class="col-12 text-center">
+                            <h5 class="form-title"><span><b>Registration Form</b></span></h5>
+                         </div>
+                         
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>District Name</b></label>
+                               <input type="text" class="form-control" name="district" value="{% for i in student %}{{i.district}}{% endfor %}" readonly >
+                               <input type="text" class="form-control" name="student_id" value="{% for i in student %}{{i.id}}{% endfor %}" hidden>
+                            </div>
+                         </div>
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>Center Code</b></label>
+                               <select class="form-control" name="center_codes" value="{% for i in student %}{{i.center_codes}}{% endfor %}"  readonly>
+                                 <option>Select Center</option>
+                                 <option value="01">01</option>
+                                 <option value="02">02</option>
+                                 <option value="03">03</option>
+                                 <option value="04">04</option>
+                                 <option value="05">05</option>
+                                 <option value="06">06</option>
+                                 <option value="07">07</option>
+                                 <option value="08">08</option>
+                                 <option value="09">09</option>
+                                 <option value="10">10</option>
+                              </select>
+                            </div>
+                         </div>
+
+                         <div class="col-12 col-sm-6">
+                           <div class="form-group">
+                              <label><b>Student Name</b></label>
+                              <input type="text" class="form-control" name="student_name" value="{% for i in student %}{{i.student_name}}{% endfor %} ">
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                           <div class="form-group">
+                              <label><b>Guardian Name</b></label>
+                              <input type="text" class="form-control" name="guardian_name" value="{% for i in student %}{{i.guardian_name}}{% endfor %} " readonly>
+                           </div>
+                        </div>
+
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>School Name</b></label>
+                               <input type="text" class="form-control" name="school_name" value="{% for i in student %}{{i.school_name}}{% endfor %} "readonly>
+                            </div>
+                         </div>
+               
+
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>Class</b></label>
+                               <input type="text" class="form-control" name="classes" value="{% for i in student %}{{i.classes}}{% endfor %} "readonly>
+                            </div>
+                         </div>
+   
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>Mobile Number</b></label>
+                               <input type="text" class="form-control" name="mobile_number" value="{% for i in student %}{{i.mobile_number}}{% endfor %}" >
+                            </div>
+                         </div>
+                         <div class="col-12 col-sm-6">
+                           <div class="form-group">
+                              <label><b>Roll No.</b></label>
+                              <input type="text" class="form-control" name="roll_no" placeholder="Enter Your Roll No."  value="{% for i in student %}{{i.roll_no}}{% endfor %} " readonly>
+                           </div>
+                        </div>
+                         
+                         
+                        
+                      </div>
+                      <br>
+                         <div class="col-12 text-center">
+                            <h5 class="form-title"><span>***Check Before Submit***</span></h5>
+                         </div>
+                         
+
+                         <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                         </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ 
+{% endblock content %}

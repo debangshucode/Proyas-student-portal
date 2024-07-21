@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <title>PROYAS</title>
+      <link rel="shortcut icon" href="{% static "assets/img/home_imgs/logo.jpeg" %}">
+      
+      <link rel="stylesheet" href="{% static "assets/plugins/bootstrap/css/bootstrap.min.css" %}">
+      <link rel="stylesheet" href="{% static "assets/plugins/fontawesome/css/fontawesome.min.css" %}">
+      <link rel="stylesheet" href="{% static "assets/plugins/fontawesome/css/all.min.css" %}">
+      <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+      <link rel="stylesheet" href="{% static "assets/css/home.css" %}">
+
+
+       <link rel="stylesheet" href="{% static 'assets/plugins/datatables/datatables.min.css' %}">
+   </head>
+
+<body>
+<div id="preeloader">
+                <div class="newtons-cradle">
+                        <div class="newtons-cradle__dot"></div>
+                        <div class="newtons-cradle__dot"></div>
+                        <div class="newtons-cradle__dot"></div>
+                        <div class="newtons-cradle__dot"></div>
+                </div>
+        </div>
+        <div class="nav_bar" id="top">
+                <div class="top_nav">
+                        <a href="#">Proyas</a>
+                        <a href="#" id="contact-link">Contact Us</a>
+                </div>
+                <div class="popup" id="contact-popup">
+                        <form class="form">
+
+                                <div class="flex">
+                                        <label>
+                                                <input required="" placeholder="" type="text" class="input">
+                                                <span>first name</span>
+                                        </label>
+
+                                        <label>
+                                                <input required="" placeholder="" type="text" class="input">
+                                                <span>last name</span>
+                                        </label>
+                                </div>
+
+                                <label>
+                                        <input required="" placeholder="" type="email" class="input">
+                                        <span>email</span>
+                                </label>
+
+                                <label>
+                                        <input required="" type="tel" placeholder="" class="input">
+                                        <span>contact number</span>
+                                </label>
+                                <label>
+                                        <textarea required="" rows="3" placeholder="" class="input01"></textarea>
+                                        <span>message</span>
+                                </label>
+
+                                <button class="fancy" href="#">
+                                        <span class="top-key"></span>
+                                        <span class="text">submit</span>
+                                        <span class="bottom-key-1"></span>
+                                        <span class="bottom-key-2"></span>
+                                </button>
+                        </form>
+                        <button id="close-popup">Close</button>
+                </div>
+                <div class="overlay" id="overlay"></div>
+                <div class="bal">
+                        <div class="nav_logo"></div>
+                        <div class="noob"> <b><h5 class="m-b-10">PROYAS EDUCARE FOUNDATION </h5> <h7>Since (1996-2023)</h7></b> </div>
+                </div>
+                <div class="bottom_nav">
+                        <ul id="menu">
+                                <li><a href="{% url "landing_home" %}">Home</a></li>
+                                <li><a href="{% url "landing_about" %}">About</a></li>
+                                <li><a href="{% url "landing_downloads" %}">Download</a></li>
+                                <li><a href="{% url "landing_notice" %}">Notice</a></li>
+                                <li><a href="#">Contacts</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <script src="{% static "assets/js/home.js" %}"></script>
+    </body>
+    
+    </html>

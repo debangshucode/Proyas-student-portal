@@ -1,0 +1,38 @@
+{% load static %}
+{% include "Landing_pages/landing_header.html" %}
+    <div class="download_body">
+        <div class="download_heading">
+            Download 
+        </div>
+        <div class="filter_download">
+            <div class="search_filter">
+                <select id="filter">
+                    <option value="none">Download Types</option>
+                    <option value="Option_1">Option 1</option>
+                    {% comment %} <option value="Option_2">Option 2</option>
+                    <option value="Option_3">Option 3</option>
+                    <option value="Option_4">Option 4</option>
+                    <option value="Option_5">Option 5</option> {% endcomment %}
+                </select>
+            </div>
+            <div class="main_notes">
+                <div class="all_notes">
+                    <a href="{% static "assets/download_docs\PTSE-2024 INSTRUCTION DOWNLOAD SECTION.pdf" %}" download class="sub_notes"
+                        data-semester="Option_1">PTSE-2024 INSTRUCTION <i class="fas fa-download"></i></a>
+                    
+                    {% comment %} <div class="show">
+                        <button onclick="showMoreNotes()">
+                            Show More
+                        </button>
+                        <button onclick="showLessNotes()">
+                            Show Less
+                        </button>
+                    </div> {% endcomment %}
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+{% include "Landing_pages/landing_footer.html" %}

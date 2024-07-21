@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">District Name</th>
+        <th scope="col">District Code</th>
+        <th scope="col">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+         {% comment %} {% for district in districts %}  {% endcomment %}
+        <tr>
+            <th scope="row">1</th>
+            <td value="">Alipurduar</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data"  %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        {% comment %} <tr>
+            <th scope="row">2</th>
+            <td value="">Bankura</td>
+            <td>BNK-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data_Bankura" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td value="">Birbhum</td>
+            <td>BRH-03</td>
+            <td class="text-center">
+                <a href="{% url "view_data_Bankura" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr> {% endcomment %}
+        {% comment %} <tr>
+            <th scope="row">4</th>
+            <td value="">Cooch Behar</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td value="">Dakshin Dinajpur</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td value="">Darjeeling</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td value="">Hooghly</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td value="">Howrah</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td value="">Jalpaiguri</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td value="">Jhargram</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">11</th>
+            <td value="">Kalimpong</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">12</th>
+            <td value="">Kolkata</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">13</th>
+            <td value="">Malda</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">14</th>
+            <td value="">Murshidabad</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">15</th>
+            <td value="">Nadia</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">16</th>
+            <td value="">North 24 Parganas</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">17</th>
+            <td value="">Paschim Bardhaman</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">18</th>
+            <td value="">Paschim Medinipur</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">19</th>
+            <td value="">Purba Bardhaman</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">20</th>
+            <td value="">Purba Medinipur</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">21</th>
+            <td value="">Purulia</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">21</th>
+            <td value="">South 24 Parganas</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">21</th>
+            <td value="">Uttar Dinajpur</td>
+            <td>AL-02</td>
+            <td class="text-center">
+                <a href="{% url "view_data" %}" class="btn btn-sm bg-success-light">Download</a>
+            </td>
+        </tr> {% endcomment %}
+
+       {% comment %} {% endfor %}  {% endcomment %}
+    </tbody>
+  </table>
+
+{% endblock content %}

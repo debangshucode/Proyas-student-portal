@@ -1,0 +1,44 @@
+{% include "Landing_pages/landing_header.html" %}
+{% load static %}
+<div class="main-wrapper login-body ">
+    <br><br><br>
+    {% comment %} <div class="login-wrapper text-center m-t-10"> {% endcomment %}
+        <div class="container "> 
+           {% comment %} <div class="loginbox text-center">  {% endcomment %}
+            
+           <div class="login-right">
+                <div class="login-right-wrap"> 
+                <h3>Download Admit Card </h3>
+                <p class="account-subtitle"></p>
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{message}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                <form  method="post">
+                    {% csrf_token %}
+                    <div class="form-group ">
+                        <label for="name">Enter Name:</label><br>
+                        <input class="form-control" type="text" name="student_name" id="student_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile_number">Enter Mobile Number:</label><br>
+                        <input class="form-control" type="text" name="mobile_number" id="mobile_number" required>
+                    </div>                  
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

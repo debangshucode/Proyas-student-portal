@@ -1,0 +1,196 @@
+@import url('https://cdn.jsdelivr.net/npm/fontsource-gilroy@latest');
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Gilroy', sans-serif;
+}
+body{
+    margin: 20px;
+}
+.admit{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admit_card{
+    height: 500px ;
+   
+    border: 10px double #000;
+    padding: 20px ;
+}
+.headers{
+    display: flex;
+    align-items: center;
+    width: calc(100% - padding);
+    padding: 20px;
+    margin: 0 20px;
+}
+.headers .text_side{
+    width: 100%;
+}
+.headers h2,h3,h5,h4{
+    text-transform: uppercase !important;
+    width: 100%;
+    display: flex;
+    margin: 5px 0;
+    justify-content: center;
+    align-items: center;
+    /* color: #4285F4; */
+}
+.headers h5,h4{
+    margin: 2px 0;
+}
+.headers h5{
+    text-transform: none !important;;
+}
+
+.headers .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: url("prayas-high-resolution-logo.png");
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode:multiply;
+    margin-bottom: 10px;
+}
+.headers .logo img{
+    height: 100%;
+    width: 100%;
+}
+.bodys{
+    padding: 20px;
+    width: calc(100% - padding);
+    margin: 20px;
+}
+.bodys p{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 550;
+}
+.bodys h8{
+    margin: 10px;
+
+
+}
+@media print {
+    @page {
+        margin: 20px;
+        /* margin-top: 20px; */
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #admit-card,
+    #admit-card * {
+        visibility: visible;
+    }
+
+    #admit-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        
+        /* Set width to A4 paper width in landscape mode */
+        
+        /* Set height to A4 paper height in landscape mode */
+    }
+
+}
+
+/* 
+.txt-center {
+    text-align: center;
+}
+
+.border- {
+    border: 1px solid #000 !important;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.mar-bot {
+    margin-bottom: 15px;
+}
+
+.admit-card {
+    border: 2px solid #000;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.BoxA h5, .BoxA p {
+    margin: 0;
+}
+
+h5 {
+    text-transform: uppercase;
+}
+
+table img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.table-bordered td, .table-bordered th, .table thead th {
+    border: 1px solid #000000 !important;
+} */
+button {
+    margin-top: 50px;
+    left: 42%;
+    height: 50px;
+    width: 200px;
+    position: relative;
+    background-color: #4285F4;
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #fff;
+  }
+
+@media only screen and (max-width: 600px) {
+  
+  .bodys p{
+      font-size: smaller;
+      font-weight: 600;
+  }
+  .bodys{
+      
+      padding: 0;
+      margin: 0 10px
+  }
+  .admit_card{
+      padding: 20px 0;
+      height: 350px;
+  }
+  h2{
+      font-size: 11px;
+      font-weight: 600;
+  }
+  h4{
+      font-size: 9px;
+  }
+  h5,h8{
+      font-size: 8px;
+      text-align: justify;
+      font-weight: 600;
+  }
+
+  .headers{
+      margin: 0;
+      padding: 10px;
+  }
+  button {
+      margin-top: 20px;
+      left: 27%;
+      height: 30px;
+      width: 150px;
+    }
+}

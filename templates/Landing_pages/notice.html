@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <title>PROYAS</title>
+      <link rel="shortcut icon" href="{% static "assets/img/home_imgs/logo.jpeg" %}">
+      {% comment %} <link rel="stylesheet" href="{% static "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap" %}"> {% endcomment %}
+      <link rel="stylesheet" href="{% static "assets/plugins/bootstrap/css/bootstrap.min.css" %}">
+      <link rel="stylesheet" href="{% static "assets/plugins/fontawesome/css/fontawesome.min.css" %}">
+      <link rel="stylesheet" href="{% static "assets/plugins/fontawesome/css/all.min.css" %}">
+      <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+    </head>
+    <body>
+{% include "Landing_pages/landing_header.html" %}
+
+<div class="notice_body">
+    <p id="slidingText">Notice & Results will be uploaded here !</p>
+</div>
+<br><br>
+<div class="text-center">
+    <h6><b>Download Admit Card here !!!</b></h6>
+<a href="{% url "admit" %}">
+
+    <div class="btn btn-primary "><strong>Admit Card</strong></div>
+</a>
+</div>
+<br><br>
+{% comment %} <div class="text-center">
+    <h6><b>Check your Result Here !!!</b></h6>
+<a href="{% url "result" %}">
+
+    <div class="btn btn-primary "><strong>Check Result</strong></div>
+</a>
+</div> {% endcomment %}
+{% include "Landing_pages/landing_footer.html" %}

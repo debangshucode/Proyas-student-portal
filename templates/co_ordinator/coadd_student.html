@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="content container-fluid">
+       <div class="page-header">
+          <div class="row align-items-center">
+             <div class="col">
+                <h3 class="page-title">Add Students</h3>
+                <ul class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="students.html">Students</a></li>
+                   <li class="breadcrumb-item active">Add Students</li>
+                </ul>
+             </div>
+          </div>
+       </div>
+       {% if messages %}
+                         {% for message in messages %}
+                            {% if message.tags == 'error' %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                               {{message}}
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                               </button>
+                            </div>
+                            {% elif message.tags == 'success' %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                               {{message}}
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                               </button>
+                            </div>
+
+                            {% endif %}
+                         {% endfor %}
+                       {% endif %}
+
+       <div class="row">
+          <div class="col-sm-12">
+             <div class="card">
+                <div class="card-body">
+                   <form method="post" action="{% url "addstudent" %}">
+                     {% csrf_token %}
+                      <div class="row">
+                        <div class="col-12 text-center">
+                           <h3 class="form-title"><span><b>PROYAS STATE LEVEL TALENT SEARCH EXAM - 2024</b></span></h3>
+                        </div>
+                        <br>
+                         <div class="col-12 text-center">
+                            <h5 class="form-title"><span>Registration Form</span></h5>
+                         </div>
+
+                         <div class="col-12">
+                           <h7>***Fill up details below in CAPITAL LETTERS***</h7>
+                         </div>
+                         <br><br>
+                        
+                        <div class="col-12 col-sm-6">
+                           <div class="form-group">
+                              <label><b>District Name</b></label>
+                              <select class="form-control" name="district" required>
+                                 <option>Select District</option>
+                                 {% for code in districts %}
+                                     <option value="{{ code }}">{{ code }}</option>
+                                 {% endfor %}
+                             </select>
+                           </div>
+                        </div>
+
+                         <div class="col-12 col-sm-6">
+                           <div class="form-group">
+                              <label><b>Center Code</b></label>
+                              <select class="form-control" name="center_codes" required>
+                                 <option>Select Center</option>
+                                 <option value="01">01</option>
+                                 <option value="02">02</option>
+                                 <option value="03">03</option>
+                                 <option value="04">04</option>
+                                 <option value="05">05</option>
+                                 <option value="06">06</option>
+                                 <option value="07">07</option>
+                                 <option value="08">08</option>
+                                 <option value="09">09</option>
+                                 <option value="10">10</option>
+                              </select>
+                           </div>
+                        </div>
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>Student Name</b></label>
+                               <input type="text" class="form-control" name="student_name" placeholder="Enter Your Name" required>
+                            </div>
+                         </div>
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>Guardian Name</b></label>
+                               <input type="text" class="form-control" name="guardian_name" placeholder="Enter Your Father's/Mother's Name" required>
+                            </div>
+                         </div>
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>School Name</b></label>
+                               <input type="text" class="form-control" name="school_name" placeholder="Enter Your School Name" required>
+                            </div>
+                         </div>
+                         
+                         <div class="col-12 col-sm-6">
+                           <div class="form-group">
+                              <label><b>Class</b></label>
+                              <select class="form-control" name="classes" required>
+                                 <option>Select Class</option>
+                                 <option value="01">01</option>
+                                 <option value="02">02</option>
+                                 <option value="03">03</option>
+                                 <option value="04">04</option>
+                                 <option value="05">05</option>
+                                 <option value="06">06</option>
+                                 <option value="07">08</option>
+                                 <option value="09">09</option>
+                                 <option value="10">10</option>
+                              </select>
+                           </div>
+                        </div>
+                          
+                         <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                               <label><b>Mobile Number</b></label>
+                               <input type="text" class="form-control" name="mobile_number" placeholder="Enter Your Mobile Number" pattern="[0-9]{10}" title="Please enter a 10-digit number" required>
+                            </div>
+                         </div>
+                         
+                      </div>
+                     <hr>
+                     <div class="col-12">
+                        <p class=" text-center"><span>***Check the form again before submit***</span></p>
+                     </div>
+                     <hr>
+                     <div class="col-12 text-center">
+                        <button type="submit" class="btn bg-success-light text-center">Submit</button>
+                     </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ 
+{% endblock content %}

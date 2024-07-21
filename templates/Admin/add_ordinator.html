@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+       <div class="card">
+          <div class="card-body">
+             <form method="post" action="{% url "coordinator" %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                   <div class="col-12 text-center">
+                      <h7 class="form-title "><span><b>Add Co-Ordinator</b></span></h7>
+                   </div>
+                   {% if messages %}
+                           {% for message in messages %}
+                              {% if message.tags == 'error' %}
+                              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                 {{message}}
+                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                                 </button>
+                              </div>
+                              {% elif message.tags == 'success' %}
+                              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                 {{message}}
+                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                                 </button>
+                              </div>
+
+                              {% endif %}
+                           {% endfor %}
+                         {% endif %}
+                   <div class="col-12 col-sm-8">
+                      <div class="form-group">
+                         <label>First Name</label>
+                         <input type="text" class="form-control" name="first_name" required>
+                      </div>
+                   </div>
+                   <div class="col-12 col-sm-8">
+                      <div class="form-group">
+                         <label>Last Name</label>
+                         <input type="text" class="form-control" name="last_name" required>
+                      </div>
+                   </div>
+                   <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                       <label><b>District Name</b></label>
+                       <select class="form-control" name="district" required>
+                          <option>Select District</option>
+                          {% for code in districts %}
+                              <option value="{{ code }}">{{ code }}</option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                    </div>
+                   <div class="col-12 col-sm-8">
+                    <div class="form-group">
+                       <label><b>Email</b></label>
+                       <input type="email" class="form-control" placeholder="Enter Co-Ordinator Email" name="email" required>
+                    </div>
+                 </div>
+                 <div class="col-12 col-sm-8">
+                    <div class="form-group">
+                       <label><b>Username</b></label>
+                       <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+                    </div>
+                 </div>
+                 <div class="col-12 col-sm-8">
+                    <div class="form-group">
+                       <label><b>Password</b></label>
+                       <input type="password" class="form-control"name="password" placeholder=" Enter Password" required>
+                    </div>
+                 </div>
+        
+                   <div class="col-12 text-center">
+                      <button type="submit" class="btn bg-success-light text-center">Add Profile</button>
+                   </div>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>
+ </div>
+ </div>
+ </div>
+{% endblock content %}

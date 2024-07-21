@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "assets/css/admit.css" %}">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="admit">
+        <div class="admit_card" id="admit-card">
+            <div class="headers">
+                
+                <div class="text_side">
+                    <h2>PROYAS STATE LEVEL TALENT SERACH EXAM - 2024</h2>
+                    <h4>Organized by- Proyas Educare foudation </h4>
+                    <h5>Website-www.proyas.in Mob-8158925832</h5>
+                    <br>
+                    <h3>ADMIT CARD</h3>
+                </div>
+            </div>
+            <div class="bodys">
+                <p>STUDENT'S NAME- {{admit_card.student_name}} </p>
+                <p>GUARDIAN'S NAME- {{admit_card.guardian_name}} </p>
+                <p>CLASS- {{admit_card.classes}}</p>
+                <p>REG. NO- {{admit_card.id}}</p>
+                <p>ROLL NO- {{admit_card.roll_no}}</p>
+                <br>
+                <p>EXAM VENUE</p>
+                <h8>EXAM DATE & TIME-22 September 2024 @ 12 NOON to 2.00 P.M</h8><br>
+                <h8>**Without Admit Card Enter not permitted into the Examination**</h8>
+            </div>
+        </div>
+    </div>
+
+
+    <button onclick="convertToPDF()" >Download Admit</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        function convertToPDF() {
+            const element = document.getElementById('admit-card');
+            html2pdf(element, {
+                filename: 'admit_card.pdf',
+                margin: 10,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+            });
+        }
+
+    </script>
+</body>
+</html>
+{% endblock content %}

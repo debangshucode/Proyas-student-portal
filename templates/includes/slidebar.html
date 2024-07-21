@@ -1,0 +1,63 @@
+{% load static %}
+
+{% comment %} {% load active_link_tags %} {% endcomment %}
+<div class="sidebar" id="sidebar">
+   <div class="sidebar-inner slimscroll">
+      <div id="sidebar-menu" class="sidebar-menu">
+         {% if user.user_type == '1' %}
+         <ul>
+            <li class="menu-title">
+               <span>Main Menu</span>
+            </li>
+
+            <li>
+               <a href="{% url "admin_home" %}"><i class="fas fa-user-graduate"></i> <span> Dashboard </span> </a>
+            </li>
+            <li class="submenu">
+               <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url "addstudent" %}">Add Student</a></li>
+                  <li><a href="{% url "view_student" %}">View Students</a></li>
+               </ul>
+            </li>
+            <li class="submenu">
+               <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span>Co Ordinator</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url "coordinator" %}">Add Co-Ordinator</a></li>
+                  {% comment %} <li><a href="#">View Co-Ordinators</a></li> {% endcomment %}
+
+               </ul>
+            </li>
+
+            <li>
+               <a href="{% url "doLogout" %}"><i class="fas fa-sign-out-alt"></i> <span> Logout </span> </a>
+            </li>
+            
+            
+         </ul>
+         {% elif user.user_type == '2' %}
+         <ul>
+            <li class="menu-title">
+               <span>Main Menu</span>
+            </li>
+
+            <li>
+               <a href="{% url "staff_home" %}"><i class="fas fa-user-graduate"></i> <span> Home </span> </a>
+            </li>
+            <li class="submenu">
+               <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span class="menu-arrow"></span></a>
+               <ul>
+
+                  <li><a href="{% url "coaddstudent" %}">Add Student</a></li>
+                  {% comment %} <li><a href="{% url "coview_student" %}">View Students</a></li> {% endcomment %}
+                  
+               </ul>
+            </li>
+            <li>
+               <a href="{% url "doLogout" %}"><i class="fas fa-sign-out-alt"></i> <span> Logout </span> </a>
+            </li>
+         </ul>
+         {% endif %}
+      </div>
+   </div>
+</div>
